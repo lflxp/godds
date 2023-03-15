@@ -1,11 +1,22 @@
 package godds
 
-// https://stackoverflow.com/questions/59353668/get-the-struct-from-c-to-golang
-
 /*
 #cgo LDFLAGS: -L {SRCDIR}/library/lib
 #cgo CFLAGS: -I {SRCDIR}/library/include
-#include "dds/dds.h"
+#include "dds/export.h"
+#include "dds/features.h"
+
+#include "dds/ddsc/dds_basic_types.h"
+
+#include "dds/ddsrt/time.h"
+#include "dds/ddsrt/retcode.h"
+#include "dds/ddsrt/log.h"
+#include "dds/ddsc/dds_public_impl.h"
+#include "dds/ddsc/dds_public_alloc.h"
+#include "dds/ddsc/dds_public_qos.h"
+#include "dds/ddsc/dds_public_error.h"
+#include "dds/ddsc/dds_public_status.h"
+#include "dds/ddsc/dds_public_listener.h"
 */
 import "C"
 
@@ -14,35 +25,35 @@ import "C"
  * @ingroup dds
  * DOC_TODO
  */
-type dds_typeid_t C.ddsi_typeid
+type dds_typeid_t C.struct_ddsi_typeid
 
 /**
  * @brief DDS Type Information (XTypes)
  * @ingroup dds
  * DOC_TODO
  */
-type ddsi_typeinfo C.dds_typeinfo_t
+type dds_typeinfo_t C.struct_ddsi_typeinfo
 
 /**
  * @brief DDS Type Object (XTypes)
  * @ingroup dds
  * DOC_TODO
  */
-type ddsi_typeobj C.dds_typeobj_t
+type dds_typeobj_t C.struct_ddsi_typeobj
 
 /**
  * @brief Reader History Cache
  * @ingroup dds
  * DOC_TODO
  */
-type dds_rhc C.dds_rhc
+type dds_rhc C.struct_dds_rhc
 
 /**
  * @brief DDSI parameter list
  * @ingroup dds
  * DOC_TODO
  */
-type ddsi_plist C.ddsi_plist
+type ddsi_plist C.struct_ddsi_plist
 
 /**
  * @anchor ddsi_sertype
@@ -50,7 +61,7 @@ type ddsi_plist C.ddsi_plist
  * @ingroup dds
  * DOC_TODO
  */
-type ddsi_sertype C.ddsi_sertype
+type ddsi_sertype C.struct_ddsi_sertype
 
 /**
  * @anchor ddsi_serdata
@@ -58,14 +69,14 @@ type ddsi_sertype C.ddsi_sertype
  * @ingroup dds
  * DOC_TODO
  */
-type ddsi_serdata C.ddsi_serdata
+type ddsi_serdata C.stuct_ddsi_serdata
 
 /**
  * @brief DDSI Config
  * @ingroup dds
  * DOC_TODO
  */
-type ddsi_config c.ddsi_config
+type ddsi_config c.struct_ddsi_config
 
 /**
  * @brief Indicates that the library uses ddsi_sertype instead of ddsi_sertopic

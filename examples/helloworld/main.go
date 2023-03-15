@@ -151,7 +151,7 @@ func main() {
 		msg.message = (*C.char)(unsafe.Pointer(ms))
 
 		fmt.Println("=== [Publisher] Writing :")
-		fmt.Printf("Message %v %v\n", msg.userID, msg.message)
+		fmt.Printf("Message %v %v\n", msg.userID, C.GoString(msg.message))
 		C.fflush(C.stdout)
 
 		// err = DDS_write(writer, &msg)

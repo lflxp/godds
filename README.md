@@ -6,6 +6,9 @@ gcc -S h.i -o h.s
 gcc -c h.s -o HelloWorldData.o 
 ```
 
+* https://chai2010.cn/advanced-go-programming-book/ch2-cgo/ch2-01-hello-cgo.html
+
+
 # LD_LIBRARY_PATH配置
 
 > export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./library/lib
