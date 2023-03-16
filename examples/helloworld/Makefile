@@ -1,5 +1,5 @@
 run: install
-	go run *.go
+	go run publisher.go
 
 install: clean
 	gcc -E HelloWorldData.c -o h.i -I ../../library/include
